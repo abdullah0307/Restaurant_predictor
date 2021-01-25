@@ -6,25 +6,42 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>784</width>
+    <height>684</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.953, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
-  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/bg/images/Tallest Restaurants in the World 7.jpg);
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="1" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="login_page">
        <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="0" column="1">
          <widget class="QFrame" name="frame">
           <property name="styleSheet">
@@ -43,47 +60,7 @@ border-radius:30px
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
-           <item row="4" column="3">
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{background:none;
- border:2px solid #EE0812;
- border-radius:6px;
- color:#EE0812;
- padding-top:5px;
- padding-bottom:5px;
-}
-QPushButton:hover{
-	background-color: rgb(255, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
-             </property>
-             <property name="text">
-              <string>Signup</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QLabel" name="label_3">
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Password:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
+           <item row="1" column="1">
             <widget class="QLabel" name="label_2">
              <property name="font">
               <font>
@@ -96,56 +73,20 @@ QPushButton:hover{
              </property>
             </widget>
            </item>
-           <item row="2" column="2" colspan="2">
-            <widget class="QLineEdit" name="lineEdit">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="2">
-            <widget class="QPushButton" name="pushButton">
+           <item row="2" column="1">
+            <widget class="QLabel" name="label_3">
              <property name="font">
               <font>
                <family>Times New Roman</family>
                <pointsize>12</pointsize>
               </font>
              </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{background:none;
- border:2px solid #EE0812;
- border-radius:6px;
- color:#EE0812;
- padding-top:5px;
- padding-bottom:5px;
-}
-QPushButton:hover{
-	background-color: rgb(255, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
-             </property>
              <property name="text">
-              <string>login</string>
+              <string>Password:</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="2" colspan="2">
-            <widget class="QLineEdit" name="lineEdit_2">
-             <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="echoMode">
-              <enum>QLineEdit::Password</enum>
-             </property>
-             <property name="cursorMoveStyle">
-              <enum>Qt::VisualMoveStyle</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1" colspan="3">
+           <item row="0" column="1" colspan="3">
             <widget class="QLabel" name="label">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -161,9 +102,6 @@ background-color: rgb(255, 255, 255);</string>
                <bold>true</bold>
               </font>
              </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(16, 16, 16);</string>
-             </property>
              <property name="text">
               <string>Restaurant Predictor</string>
              </property>
@@ -172,23 +110,90 @@ background-color: rgb(255, 255, 255);</string>
              </property>
             </widget>
            </item>
+           <item row="3" column="2">
+            <widget class="QPushButton" name="pushButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:none
+</string>
+             </property>
+             <property name="text">
+              <string>login</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2" colspan="2">
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:none
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:none
+</string>
+             </property>
+             <property name="text">
+              <string>Signup</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2" colspan="2">
+            <widget class="QLineEdit" name="lineEdit_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:none
+</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="cursorMoveStyle">
+              <enum>Qt::VisualMoveStyle</enum>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
         <item row="0" column="2">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0">
          <spacer name="horizontalSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -206,26 +211,215 @@ background-color: rgb(255, 255, 255);</string>
       <widget class="QWidget" name="page_2">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QTabWidget" name="tabWidget">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <widget class="QLabel" name="label_9">
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>24</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
           </property>
-          <property name="currentIndex">
-           <number>0</number>
+          <property name="text">
+           <string>Select Features</string>
           </property>
-          <widget class="QWidget" name="tab">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>746</width>
+             <height>1086</height>
+            </rect>
            </property>
-           <attribute name="title">
-            <string>Tab 1</string>
-           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QCalendarWidget" name="calendarWidget">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Select City</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>item1 </string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>item 2</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Select Food</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_2">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Average cost for two</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_3">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Currency</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_4">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_10">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Online Delivery Service</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_7">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Table Booking Service</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_5">
+              <property name="font">
+               <font>
+                <family>Times New Roman</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="tab_2">
-           <attribute name="title">
-            <string>Tab 2</string>
-           </attribute>
-          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="font">
+           <font>
+            <family>Times New Roman</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Predict Restaurant</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -239,13 +433,15 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>784</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>
