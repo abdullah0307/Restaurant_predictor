@@ -2,7 +2,8 @@ import csv
 import re
 import numpy as np
 
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtCore import QUrl
 
 from GUI import Ui_MainWindow
 
@@ -33,6 +34,10 @@ class Main:
         self.main_obj.pushButton_2.clicked.connect(lambda: self.register_window.show())
         self.main_obj.pushButton.clicked.connect(self.login)
         self.register_obj.pushButton.clicked.connect(self.register)
+        self.main_obj.pushButton_3.clicked.connect(self.move_back)
+
+        # link the list of restaurants with the function
+        self.main_obj.listWidget.itemClicked.connect(self.list_item_clicked)
 
         # If any item selected in the combo box
         self.main_obj.pushButton_4.clicked.connect(self.combo_value_changed)
@@ -47,10 +52,40 @@ class Main:
         self.df = self.clean_data(self.df.astype(str))
 
         # Question
-        self.Features = ['City', 'Cuisines','Has_Online_delivery','Has_Table_booking','Average_Cost_for_two','Currency']
+        self.Features = ['City', 'Cuisines', 'Has_Online_delivery', 'Has_Table_booking', 'Average_Cost_for_two',
+                         'Currency']
 
         # start with First Feature
         self.column = 0
+
+    def move_back(self):
+        # Load the dataset
+        self.df = pd.read_csv("data/zomato.csv", encoding="ISO-8859-1")
+
+        # Clean the data frame
+        self.df = self.clean_data(self.df.astype(str))
+
+        # start with First Feature
+        self.column = 0
+
+        # Go back to the selection screen
+        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2)
+
+    def list_item_clicked(self):
+        p = self.main_obj.listWidget.currentItem().text()
+        self.main_obj.label_5.setText("Restaurant name: " + p)
+        self.main_obj.label_6.setText(
+            "Restaurant ID: " + self.df[self.df['Restaurant_Name'] == p]['Restaurant_ID'].values[0])
+        self.main_obj.label_11.setText("Cuisines: " + self.df[self.df['Restaurant_Name'] == p]['Cuisines'].values[0])
+        self.main_obj.label_12.setText("Currency: " + self.df[self.df['Restaurant_Name'] == p]['Currency'].values[0])
+        self.main_obj.label_8.setText("City: " + self.df[self.df['Restaurant_Name'] == p]['City'].values[0])
+        self.main_obj.label_10.setText("Locality: " + self.df[self.df['Restaurant_Name'] == p]['Locality'].values[0])
+        self.main_obj.label_7.setText("Address: " + self.df[self.df['Restaurant_Name'] == p]['Address'].values[0])
+        latitude = self.df[self.df['Restaurant_Name'] == p]['Latitude'].values[0]
+        longitude = self.df[self.df['Restaurant_Name'] == p]['Longitude'].values[0]
+
+        self.main_obj.webEngineView.setUrl(
+            QtCore.QUrl("https://www.google.com/maps/place/" + str(latitude) + "," + str(longitude)))
 
     def combo_value_changed(self):
         # get the text from the combo

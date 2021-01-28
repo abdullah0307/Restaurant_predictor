@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="bg">
+    <file>../images/back.png</file>
     <file>../images/rest-696x392.jpg</file>
     <file>../images/Tallest Restaurants in the World 7.jpg</file>
   </qresource>
