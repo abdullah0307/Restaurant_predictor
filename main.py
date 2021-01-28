@@ -1,5 +1,6 @@
 import csv
 import re
+import numpy as np
 
 from PyQt5 import QtWidgets
 
@@ -32,6 +33,57 @@ class Main:
         self.main_obj.pushButton_2.clicked.connect(lambda: self.register_window.show())
         self.main_obj.pushButton.clicked.connect(self.login)
         self.register_obj.pushButton.clicked.connect(self.register)
+
+        # If any item selected in the combo box
+        self.main_obj.pushButton_4.clicked.connect(self.combo_value_changed)
+
+        # Start the window with login page
+        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2)
+
+        # Load the dataset
+        self.df = pd.read_csv("data/zomato.csv", encoding="ISO-8859-1")
+
+        # Clean the data frame
+        self.df = self.clean_data(self.df.astype(str))
+
+        # Question
+        self.Features = ['City', 'Cuisines','Has_Online_delivery','Has_Table_booking','Average_Cost_for_two','Currency']
+
+        # start with First Feature
+        self.column = 0
+
+    def combo_value_changed(self):
+        # get the text from the combo
+        text = self.main_obj.comboBox.currentText()
+        # extract the df matching with Feature
+        self.df = self.df[self.df[self.Features[self.column]] == text]
+
+        # move to next column
+        self.column += 1
+        self.main_obj.comboBox.clear()
+        self.main_obj.label_4.setText(self.Features[self.column])
+        options = list(self.df[self.Features[self.column]].unique())
+        print(options)
+
+        if len(options) == 1:
+            self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page)
+            self.main_obj.listWidget.clear()
+            self.main_obj.listWidget.addItems(self.df['Restaurant_Name'].unique())
+            return
+
+        self.main_obj.comboBox.addItems(options)
+
+    def clean_data(self, dataset):
+        cols = dataset.columns
+        data = dataset[cols].values.flatten()
+
+        s = pd.Series(data)
+        s = s.str.strip()
+        s = s.values.reshape(dataset.shape)
+
+        dataset = pd.DataFrame(s, columns=dataset.columns)
+
+        return dataset.astype(str)
 
     def encode(self, password):
         encode = ""

@@ -20,8 +20,7 @@
    <string>Warning</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-color: rgb(255, 255, 0);</string>
+   <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.953, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -30,9 +29,9 @@ background-color: rgb(255, 255, 0);</string>
       <string notr="true">QFrame{
 background:none;
 background-color: rgb(255, 255, 255);
+border-color: rgb(255, 0, 0);
 border-radius:30px
 }
-
 </string>
      </property>
      <property name="frameShape">
@@ -73,9 +72,6 @@ border-radius:30px
           <weight>75</weight>
           <bold>true</bold>
          </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 40, 3);</string>
         </property>
         <property name="text">
          <string>Warning:</string>
