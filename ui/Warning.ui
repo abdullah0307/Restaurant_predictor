@@ -20,18 +20,19 @@
    <string>Warning</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.953, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true">background-image: url(:/bg/images/Tallest Restaurants in the World 7.jpg);
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
-      <string notr="true">QFrame{
-background:none;
+      <string notr="true">background:none;
 background-color: rgb(255, 255, 255);
 border-color: rgb(255, 0, 0);
-border-radius:30px
-}
+border-radius:30px;
+border:2px solid #030202;
+
 </string>
      </property>
      <property name="frameShape">
@@ -46,8 +47,11 @@ border-radius:30px
         <property name="font">
          <font>
           <family>Times New Roman</family>
-          <pointsize>12</pointsize>
+          <pointsize>14</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
         </property>
         <property name="text">
          <string>Invalid user name or password</string>
@@ -73,6 +77,9 @@ border-radius:30px
           <bold>true</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
+        </property>
         <property name="text">
          <string>Warning:</string>
         </property>
@@ -83,6 +90,8 @@ border-radius:30px
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

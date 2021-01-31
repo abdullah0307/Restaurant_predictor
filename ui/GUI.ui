@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1065</width>
-    <height>789</height>
+    <width>1117</width>
+    <height>823</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,6 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/bg/images/Tallest Restaurants in the World 7.jpg);
-/* Center and scale the image nicely */
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;</string>
@@ -31,7 +30,7 @@ background-size: cover;</string>
     <item row="4" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="login_page">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -90,12 +89,11 @@ background-size: cover;</string>
         <item row="1" column="1">
          <widget class="QFrame" name="frame">
           <property name="styleSheet">
-           <string notr="true">QFrame{
-background:none;
+           <string notr="true">background:none;
 background-color: rgb(255, 255, 255);
 border-color: rgb(255, 0, 0);
-border-radius:30px
-}
+border-radius:30px;
+border:2px solid #030202;
 </string>
           </property>
           <property name="frameShape">
@@ -104,24 +102,8 @@ border-radius:30px
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <layout class="QGridLayout" name="gridLayout_2">
-           <item row="1" column="1" colspan="3">
-            <spacer name="verticalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="0" column="1" colspan="3">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
             <widget class="QLabel" name="label">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -137,6 +119,9 @@ border-radius:30px
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true"> border:None</string>
+             </property>
              <property name="text">
               <string>Restaurant Predictor</string>
              </property>
@@ -145,8 +130,27 @@ border-radius:30px
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QFrame" name="frame_4">
+             <property name="styleSheet">
+              <string notr="true"> border:None;</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -154,7 +158,90 @@ border-radius:30px
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
-              <item row="3" column="1">
+              <item row="2" column="2">
+               <widget class="QLabel" name="label_3">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"> border:None</string>
+                </property>
+                <property name="text">
+                 <string>Password:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <widget class="QLineEdit" name="lineEdit_2">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"> border:2px solid #030202;</string>
+                </property>
+                <property name="echoMode">
+                 <enum>QLineEdit::Password</enum>
+                </property>
+                <property name="cursorMoveStyle">
+                 <enum>Qt::VisualMoveStyle</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="2">
+               <widget class="QLineEdit" name="lineEdit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"> border:2px solid #030202;</string>
+                </property>
+                <property name="placeholderText">
+                 <string>abc@xyz.com</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
                <widget class="QPushButton" name="pushButton_2">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -165,7 +252,9 @@ border-radius:30px
                 <property name="font">
                  <font>
                   <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -187,70 +276,7 @@ QPushButton:hover{
                 </property>
                </widget>
               </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="label_2">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Email:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="lineEdit_2">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:none
-</string>
-                </property>
-                <property name="echoMode">
-                 <enum>QLineEdit::Password</enum>
-                </property>
-                <property name="cursorMoveStyle">
-                 <enum>Qt::VisualMoveStyle</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background:none
-</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QLabel" name="label_3">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                 </font>
-                </property>
-                <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
-                </property>
-                <property name="text">
-                 <string>Password:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
+              <item row="3" column="1">
                <widget class="QPushButton" name="pushButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -261,7 +287,9 @@ QPushButton:hover{
                 <property name="font">
                  <font>
                   <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -280,6 +308,110 @@ QPushButton:hover{
                 </property>
                 <property name="text">
                  <string>login</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="label_2">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"> border:None</string>
+                </property>
+                <property name="text">
+                 <string>Email:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_8">
+             <property name="styleSheet">
+              <string notr="true">background:None;
+border:none;</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="pushButton_6">
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{background:none;
+ border:2px solid #030202;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>Predict Restaurant </string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QPushButton" name="pushButton_7">
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{background:none;
+ border:2px solid #030202;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>About</string>
                 </property>
                </widget>
               </item>
@@ -322,6 +454,19 @@ QPushButton:hover{
           </property>
          </spacer>
         </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="4" column="1">
          <spacer name="verticalSpacer_5">
           <property name="orientation">
@@ -353,7 +498,8 @@ QPushButton:hover{
            <string notr="true">background:none;
 background-color: rgb(255, 255, 255);
 border-color: rgb(255, 0, 0);
-border-radius:30px</string>
+border-radius:30px;
+ border:2px solid #030202;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -361,49 +507,48 @@ border-radius:30px</string>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <layout class="QGridLayout" name="gridLayout_9">
-           <item row="4" column="0">
-            <widget class="QPushButton" name="pushButton_4">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <spacer name="verticalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_9">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="maximumSize">
-              <size>
-               <width>250</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="font">
               <font>
                <family>Times New Roman</family>
-               <pointsize>12</pointsize>
+               <pointsize>24</pointsize>
                <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
- border-radius:6px;
- color:#030202;
- padding-top:5px;
- padding-bottom:5px;
-}
-QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+              <string notr="true"> border:None;</string>
              </property>
              <property name="text">
-              <string>Next</string>
+              <string>Select Features</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
-           <item row="2" column="0">
+           <item>
             <widget class="QLabel" name="label_4">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -419,19 +564,35 @@ QPushButton:hover{
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true"> border:None;</string>
+             </property>
              <property name="text">
               <string>Select City</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
+           <item>
+            <spacer name="verticalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QComboBox" name="comboBox">
              <property name="font">
               <font>
                <family>Times New Roman</family>
                <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
+               <weight>50</weight>
+               <bold>false</bold>
               </font>
              </property>
              <property name="layoutDirection">
@@ -482,35 +643,112 @@ QPushButton:hover{
              </item>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_9">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+           <item>
+            <spacer name="verticalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
              </property>
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>24</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
              </property>
-             <property name="text">
-              <string>Select Features</string>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout">
+             <item>
+              <widget class="QPushButton" name="pushButton_4">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>14</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{background:none;
+ border:2px solid #030202;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Next</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_5">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>14</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{background:none;
+ border:2px solid #030202;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Back</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_10">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
              </property>
-            </widget>
+            </spacer>
            </item>
           </layout>
          </widget>
         </item>
-        <item row="3" column="0">
-         <spacer name="horizontalSpacer_4">
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_6">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -518,405 +756,6 @@ QPushButton:hover{
            <size>
             <width>40</width>
             <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="page">
-       <layout class="QGridLayout" name="gridLayout_6">
-        <item row="1" column="1">
-         <widget class="QFrame" name="frame_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background:none;
-background-color: rgb(255, 255, 255);
-border-color: rgb(255, 0, 0);
-border-radius:30px</string>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_7">
-           <item row="4" column="0" colspan="2">
-            <widget class="QFrame" name="frame_5">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="autoFillBackground">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(204, 204, 204);</string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_10">
-              <property name="sizeConstraint">
-               <enum>QLayout::SetMinimumSize</enum>
-              </property>
-              <item row="0" column="0">
-               <widget class="QWebEngineView" name="webEngineView">
-                <property name="minimumSize">
-                 <size>
-                  <width>725</width>
-                  <height>415</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>725</width>
-                  <height>415</height>
-                 </size>
-                </property>
-                <property name="url">
-                 <url>
-                  <string>https://www.google.com/maps/@31.5833248,74.4173763,15z</string>
-                 </url>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QFrame" name="frame_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(204, 204, 204);</string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_8">
-              <property name="leftMargin">
-               <number>15</number>
-              </property>
-              <item row="8" column="2">
-               <widget class="QLabel" name="label_7">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string>background: None</string>
-                </property>
-                <property name="text">
-                 <string>Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2">
-               <widget class="QLabel" name="label_5">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background: None</string>
-                </property>
-                <property name="text">
-                 <string>Restaurant name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="2">
-               <widget class="QLabel" name="label_6">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string>background: None</string>
-                </property>
-                <property name="text">
-                 <string>Restaurant_ID</string>
-                </property>
-               </widget>
-              </item>
-              <item row="7" column="2">
-               <widget class="QLabel" name="label_10">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string>background: None</string>
-                </property>
-                <property name="text">
-                 <string>locality</string>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="2">
-               <widget class="QLabel" name="label_12">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string>background: None</string>
-                </property>
-                <property name="text">
-                 <string>Currency</string>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="2">
-               <widget class="QLabel" name="label_8">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string>background: None</string>
-                </property>
-                <property name="text">
-                 <string>City</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="2">
-               <widget class="QLabel" name="label_11">
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>12</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string>background: None</string>
-                </property>
-                <property name="text">
-                 <string>Cuisines</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="3" column="2">
-            <widget class="QLabel" name="label_13">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Select Restaurant</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QLabel" name="label_14">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Location on map</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="2" rowspan="3" colspan="3">
-            <widget class="QListWidget" name="listWidget">
-             <property name="minimumSize">
-              <size>
-               <width>250</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>250</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="autoFillBackground">
-              <bool>true</bool>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background:None;
-background-color: rgb(204, 204, 204);</string>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Plain</enum>
-             </property>
-             <property name="tabKeyNavigation">
-              <bool>false</bool>
-             </property>
-             <property name="movement">
-              <enum>QListView::Free</enum>
-             </property>
-             <property name="resizeMode">
-              <enum>QListView::Fixed</enum>
-             </property>
-             <property name="spacing">
-              <number>15</number>
-             </property>
-             <property name="viewMode">
-              <enum>QListView::ListMode</enum>
-             </property>
-             <property name="uniformItemSizes">
-              <bool>true</bool>
-             </property>
-             <property name="currentRow">
-              <number>0</number>
-             </property>
-             <property name="sortingEnabled">
-              <bool>true</bool>
-             </property>
-             <item>
-              <property name="text">
-               <string>Restaurant 1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Resta</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="5" column="1">
-            <widget class="QLabel" name="label_15">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Restaurant Details</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="4">
-            <widget class="QPushButton" name="pushButton_3">
-             <property name="icon">
-              <iconset resource="images.qrc">
-               <normaloff>:/bg/images/back.png</normaloff>:/bg/images/back.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <spacer name="verticalSpacer_6">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
            </size>
           </property>
          </spacer>
@@ -947,15 +786,427 @@ background-color: rgb(204, 204, 204);</string>
           </property>
          </spacer>
         </item>
-        <item row="1" column="0">
-         <spacer name="horizontalSpacer_6">
+        <item row="1" column="1">
+         <widget class="QFrame" name="frame_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:none;
+background-color: rgb(255, 255, 255);
+border-color: rgb(255, 0, 0);
+border-radius:30px;
+border:2px solid #030202;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="5" column="0" rowspan="2" colspan="2">
+            <widget class="QFrame" name="frame_5">
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(204, 204, 204);
+border:2px solid #030202;</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_10">
+              <property name="sizeConstraint">
+               <enum>QLayout::SetMinimumSize</enum>
+              </property>
+              <item row="0" column="0">
+               <widget class="QWebEngineView" name="webEngineView" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>725</width>
+                  <height>415</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>725</width>
+                  <height>415</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:None;
+border-radius:6px;
+padding-top:5px;
+padding-bottom:5px;</string>
+                </property>
+                <property name="url" stdset="0">
+                 <url>
+                  <string>https://www.google.com</string>
+                 </url>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="label_14">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"> border:None;</string>
+             </property>
+             <property name="text">
+              <string>Location on map</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QFrame" name="frame_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(204, 204, 204); border:2px solid #030202;</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <property name="leftMargin">
+               <number>15</number>
+              </property>
+              <item row="8" column="2">
+               <widget class="QLabel" name="label_7">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="label_5">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>Restaurant name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>Restaurant_ID</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="2">
+               <widget class="QLabel" name="label_10">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>locality</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="2">
+               <widget class="QLabel" name="label_12">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>Currency</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QLabel" name="label_8">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>City</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="2">
+               <widget class="QLabel" name="label_11">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>12</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background: None; border:None;</string>
+                </property>
+                <property name="text">
+                 <string>Cuisines</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLabel" name="label_15">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"> border:None;</string>
+             </property>
+             <property name="text">
+              <string>Restaurant Details</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3" rowspan="5" colspan="3">
+            <widget class="QFrame" name="frame_7">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(204, 204, 204);
+ border:2px solid #030202;</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QListWidget" name="listWidget">
+                <property name="minimumSize">
+                 <size>
+                  <width>250</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"> border:None
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="tabKeyNavigation">
+                 <bool>false</bool>
+                </property>
+                <property name="movement">
+                 <enum>QListView::Free</enum>
+                </property>
+                <property name="resizeMode">
+                 <enum>QListView::Fixed</enum>
+                </property>
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="viewMode">
+                 <enum>QListView::ListMode</enum>
+                </property>
+                <property name="uniformItemSizes">
+                 <bool>true</bool>
+                </property>
+                <property name="currentRow">
+                 <number>0</number>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>true</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Resta</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Restaurant 1</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="styleSheet">
+              <string notr="true">border:none;</string>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/bg/images/back.png</normaloff>:/bg/images/back.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QLabel" name="label_13">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"> border:None;</string>
+             </property>
+             <property name="text">
+              <string>Select Restaurant</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_6">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
@@ -971,7 +1222,7 @@ background-color: rgb(204, 204, 204);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1065</width>
+     <width>1117</width>
      <height>21</height>
     </rect>
    </property>

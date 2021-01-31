@@ -5,4 +5,8 @@
     <orderEntry type="jdk" jdkName="Python 3.6 (Marvellous_Group_03234952_Final_Year_Project)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="versionSpecifier" value="Strong equality (==x.y.z)" />
+    <option name="keepMatchingSpecifier" value="false" />
+  </component>
 </module>

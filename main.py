@@ -1,14 +1,13 @@
 import csv
 import re
-import numpy as np
 
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtCore import QUrl
 
 from GUI import Ui_MainWindow
 
 import Register
 import Warning
+import About
 import pandas as pd
 
 
@@ -30,11 +29,19 @@ class Main:
         self.warning_obj = Warning.Ui_Dialog()
         self.warning_obj.setupUi(self.warning_window)
 
+        # About window
+        self.about_window = QtWidgets.QDialog()
+        self.about_obj = About.Ui_Dialog()
+        self.about_obj.setupUi(self.about_window)
+
         # Buttons connection
         self.main_obj.pushButton_2.clicked.connect(lambda: self.register_window.show())
         self.main_obj.pushButton.clicked.connect(self.login)
         self.register_obj.pushButton.clicked.connect(self.register)
         self.main_obj.pushButton_3.clicked.connect(self.move_back)
+        self.main_obj.pushButton_6.clicked.connect(lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2))
+        self.main_obj.pushButton_7.clicked.connect(lambda: self.about_window.show())
+        self.main_obj.pushButton_5.clicked.connect(lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
 
         # link the list of restaurants with the function
         self.main_obj.listWidget.itemClicked.connect(self.list_item_clicked)
@@ -43,7 +50,11 @@ class Main:
         self.main_obj.pushButton_4.clicked.connect(self.combo_value_changed)
 
         # Start the window with login page
-        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2)
+        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page)
+
+        # Initially the login is appear
+        self.main_obj.frame_4.setVisible(True)
+        self.main_obj.frame_8.setVisible(False)
 
         # Load the dataset
         self.df = pd.read_csv("data/zomato.csv", encoding="ISO-8859-1")
@@ -70,6 +81,12 @@ class Main:
 
         # Go back to the selection screen
         self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2)
+
+        # Reset the item of combo with cities
+        cities = ['Birmingham', 'London', 'Manchester', 'Edinburgh', 'New Delhi', 'Mumbai', 'Dubai', 'Athens']
+        self.main_obj.comboBox.clear()
+        self.main_obj.comboBox.addItems(cities)
+        self.main_obj.label_4.setText('City')
 
     def list_item_clicked(self):
         p = self.main_obj.listWidget.currentItem().text()
@@ -195,7 +212,8 @@ class Main:
         input_password = self.main_obj.lineEdit_2.text()
 
         if self.check_user(input_email, input_password):
-            self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2)
+            self.main_obj.frame_4.setVisible(False)
+            self.main_obj.frame_8.setVisible(True)
         else:
             self.warning_obj.label_2.setText("Wrong email or password")
             self.warning_window.show()
