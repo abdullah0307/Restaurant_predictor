@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1117</width>
-    <height>823</height>
+    <width>1095</width>
+    <height>857</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@ background-size: cover;</string>
     <item row="4" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login_page">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -88,12 +88,22 @@ background-size: cover;</string>
         </item>
         <item row="1" column="1">
          <widget class="QFrame" name="frame">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="styleSheet">
            <string notr="true">background:none;
-background-color: rgb(255, 255, 255);
-border-color: rgb(255, 0, 0);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1.546, fx:0.5, fy:0.5, stop:0 rgba(223, 149, 0, 255), stop:1 rgba(255, 255, 255, 255));
 border-radius:30px;
-border:2px solid #030202;
 </string>
           </property>
           <property name="frameShape">
@@ -106,7 +116,7 @@ border:2px solid #030202;
            <item>
             <widget class="QLabel" name="label">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -120,7 +130,7 @@ border:2px solid #030202;
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true"> border:None</string>
+              <string notr="true">background:none</string>
              </property>
              <property name="text">
               <string>Restaurant Predictor</string>
@@ -149,7 +159,7 @@ border:2px solid #030202;
            <item>
             <widget class="QFrame" name="frame_4">
              <property name="styleSheet">
-              <string notr="true"> border:None;</string>
+              <string notr="true">background:none;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -172,25 +182,12 @@ border:2px solid #030202;
                  <enum>Qt::LeftToRight</enum>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true"> border:None</string>
+                 <string notr="true">background:none</string>
                 </property>
                 <property name="text">
                  <string>Password:</string>
                 </property>
                </widget>
-              </item>
-              <item row="3" column="2">
-               <spacer name="horizontalSpacer_7">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
               </item>
               <item row="2" column="0" colspan="2">
                <widget class="QLineEdit" name="lineEdit_2">
@@ -208,7 +205,7 @@ border:2px solid #030202;
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true"> border:2px solid #030202;</string>
+                 <string notr="true">background:none;</string>
                 </property>
                 <property name="echoMode">
                  <enum>QLineEdit::Password</enum>
@@ -234,7 +231,7 @@ border:2px solid #030202;
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true"> border:2px solid #030202;</string>
+                 <string notr="true">background:none;</string>
                 </property>
                 <property name="placeholderText">
                  <string>abc@xyz.com</string>
@@ -259,17 +256,14 @@ border:2px solid #030202;
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
  border-radius:6px;
  color:#030202;
  padding-top:5px;
  padding-bottom:5px;
 }
 QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+	background-color: rgb(181, 121, 0);
+}</string>
                 </property>
                 <property name="text">
                  <string>Signup</string>
@@ -294,17 +288,14 @@ QPushButton:hover{
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
  border-radius:6px;
  color:#030202;
  padding-top:5px;
  padding-bottom:5px;
 }
 QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+	background-color: rgb(181, 121, 0);
+}</string>
                 </property>
                 <property name="text">
                  <string>login</string>
@@ -322,7 +313,7 @@ QPushButton:hover{
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true"> border:None</string>
+                 <string notr="true">background:none</string>
                 </property>
                 <property name="text">
                  <string>Email:</string>
@@ -363,24 +354,21 @@ border:none;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
  border-radius:6px;
  color:#030202;
  padding-top:5px;
  padding-bottom:5px;
 }
 QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+	background-color: rgb(181, 121, 0);
+}</string>
                 </property>
                 <property name="text">
                  <string>Predict Restaurant </string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="0">
+              <item row="2" column="0">
                <widget class="QPushButton" name="pushButton_7">
                 <property name="maximumSize">
                  <size>
@@ -398,20 +386,71 @@ QPushButton:hover{
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
  border-radius:6px;
  color:#030202;
  padding-top:5px;
  padding-bottom:5px;
 }
 QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+	background-color: rgb(181, 121, 0);
+}</string>
                 </property>
                 <property name="text">
                  <string>About</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QPushButton" name="pushButton_8">
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{background:none;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(181, 121, 0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Favourite</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QPushButton" name="pushButton_10">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777210</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{background:none;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(181, 121, 0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Logout</string>
                 </property>
                </widget>
               </item>
@@ -496,10 +535,9 @@ QPushButton:hover{
           </property>
           <property name="styleSheet">
            <string notr="true">background:none;
-background-color: rgb(255, 255, 255);
-border-color: rgb(255, 0, 0);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1.546, fx:0.5, fy:0.5, stop:0 rgba(223, 149, 0, 255), stop:1 rgba(255, 255, 255, 255));
 border-radius:30px;
- border:2px solid #030202;</string>
+</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -538,7 +576,7 @@ border-radius:30px;
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true"> border:None;</string>
+              <string notr="true">background:none</string>
              </property>
              <property name="text">
               <string>Select Features</string>
@@ -565,7 +603,7 @@ border-radius:30px;
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true"> border:None;</string>
+              <string notr="true">background:none</string>
              </property>
              <property name="text">
               <string>Select City</string>
@@ -599,7 +637,7 @@ border-radius:30px;
               <enum>Qt::LeftToRight</enum>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(184, 184, 184);</string>
+              <string notr="true">background:none</string>
              </property>
              <item>
               <property name="text">
@@ -676,17 +714,14 @@ border-radius:30px;
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
  border-radius:6px;
  color:#030202;
  padding-top:5px;
  padding-bottom:5px;
 }
 QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+	background-color: rgb(181, 121, 0);
+}</string>
                </property>
                <property name="text">
                 <string>Next</string>
@@ -708,17 +743,14 @@ QPushButton:hover{
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
  border-radius:6px;
  color:#030202;
  padding-top:5px;
  padding-bottom:5px;
 }
 QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+	background-color: rgb(181, 121, 0);
+}</string>
                </property>
                <property name="text">
                 <string>Back</string>
@@ -808,14 +840,11 @@ border:2px solid #030202;</string>
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
-           <item row="5" column="0" rowspan="2" colspan="2">
-            <widget class="QFrame" name="frame_5">
-             <property name="autoFillBackground">
-              <bool>false</bool>
-             </property>
+           <item row="4" column="3" rowspan="5" colspan="3">
+            <widget class="QFrame" name="frame_7">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(204, 204, 204);
-border:2px solid #030202;</string>
+ border:2px solid #030202;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -823,38 +852,99 @@ border:2px solid #030202;</string>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QGridLayout" name="gridLayout_10">
-              <property name="sizeConstraint">
-               <enum>QLayout::SetMinimumSize</enum>
-              </property>
-              <item row="0" column="0">
-               <widget class="QWebEngineView" name="webEngineView" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QListWidget" name="listWidget">
                 <property name="minimumSize">
                  <size>
-                  <width>725</width>
-                  <height>415</height>
+                  <width>250</width>
+                  <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>725</width>
-                  <height>415</height>
+                  <width>250</width>
+                  <height>16777215</height>
                  </size>
                 </property>
+                <property name="font">
+                 <font>
+                  <family>Times New Roman</family>
+                  <pointsize>14</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
                 <property name="styleSheet">
-                 <string notr="true">border:None;
-border-radius:6px;
-padding-top:5px;
-padding-bottom:5px;</string>
+                 <string notr="true"> border:None
+</string>
                 </property>
-                <property name="url" stdset="0">
-                 <url>
-                  <string>https://www.google.com</string>
-                 </url>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
                 </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="tabKeyNavigation">
+                 <bool>false</bool>
+                </property>
+                <property name="movement">
+                 <enum>QListView::Free</enum>
+                </property>
+                <property name="resizeMode">
+                 <enum>QListView::Fixed</enum>
+                </property>
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="viewMode">
+                 <enum>QListView::ListMode</enum>
+                </property>
+                <property name="uniformItemSizes">
+                 <bool>true</bool>
+                </property>
+                <property name="currentRow">
+                 <number>0</number>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>true</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Resta</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Restaurant 1</string>
+                 </property>
+                </item>
                </widget>
               </item>
              </layout>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="styleSheet">
+              <string notr="true">border:none;</string>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/bg/images/back.png</normaloff>:/bg/images/back.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item row="3" column="1">
@@ -878,6 +968,33 @@ padding-bottom:5px;</string>
              </property>
              <property name="text">
               <string>Location on map</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLabel" name="label_15">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"> border:None;</string>
+             </property>
+             <property name="text">
+              <string>Restaurant Details</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -1034,38 +1151,14 @@ padding-bottom:5px;</string>
              </layout>
             </widget>
            </item>
-           <item row="7" column="1">
-            <widget class="QLabel" name="label_15">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+           <item row="5" column="0" rowspan="2" colspan="2">
+            <widget class="QFrame" name="frame_5">
+             <property name="autoFillBackground">
+              <bool>false</bool>
              </property>
-             <property name="font">
-              <font>
-               <family>Times New Roman</family>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"> border:None;</string>
-             </property>
-             <property name="text">
-              <string>Restaurant Details</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="3" rowspan="5" colspan="3">
-            <widget class="QFrame" name="frame_7">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(204, 204, 204);
- border:2px solid #030202;</string>
+border:2px solid #030202;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1073,99 +1166,38 @@ padding-bottom:5px;</string>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout">
-              <item>
-               <widget class="QListWidget" name="listWidget">
+             <layout class="QGridLayout" name="gridLayout_10">
+              <property name="sizeConstraint">
+               <enum>QLayout::SetMinimumSize</enum>
+              </property>
+              <item row="0" column="0">
+               <widget class="QWebEngineView" name="webEngineView" native="true">
                 <property name="minimumSize">
                  <size>
-                  <width>250</width>
-                  <height>0</height>
+                  <width>725</width>
+                  <height>300</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>250</width>
-                  <height>16777215</height>
+                  <width>725</width>
+                  <height>400</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <family>Times New Roman</family>
-                  <pointsize>14</pointsize>
-                  <weight>50</weight>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
-                </property>
-                <property name="autoFillBackground">
-                 <bool>false</bool>
-                </property>
                 <property name="styleSheet">
-                 <string notr="true"> border:None
-</string>
+                 <string notr="true">border:None;
+border-radius:6px;
+padding-top:5px;
+padding-bottom:5px;</string>
                 </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                <property name="url" stdset="0">
+                 <url>
+                  <string>https://www.google.com</string>
+                 </url>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Plain</enum>
-                </property>
-                <property name="tabKeyNavigation">
-                 <bool>false</bool>
-                </property>
-                <property name="movement">
-                 <enum>QListView::Free</enum>
-                </property>
-                <property name="resizeMode">
-                 <enum>QListView::Fixed</enum>
-                </property>
-                <property name="spacing">
-                 <number>15</number>
-                </property>
-                <property name="viewMode">
-                 <enum>QListView::ListMode</enum>
-                </property>
-                <property name="uniformItemSizes">
-                 <bool>true</bool>
-                </property>
-                <property name="currentRow">
-                 <number>0</number>
-                </property>
-                <property name="sortingEnabled">
-                 <bool>true</bool>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>Resta</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Restaurant 1</string>
-                 </property>
-                </item>
                </widget>
               </item>
              </layout>
-            </widget>
-           </item>
-           <item row="3" column="5">
-            <widget class="QPushButton" name="pushButton_3">
-             <property name="styleSheet">
-              <string notr="true">border:none;</string>
-             </property>
-             <property name="icon">
-              <iconset resource="images.qrc">
-               <normaloff>:/bg/images/back.png</normaloff>:/bg/images/back.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
             </widget>
            </item>
            <item row="3" column="4">
@@ -1192,6 +1224,38 @@ padding-bottom:5px;</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QPushButton" name="pushButton_9">
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{background:none;
+ border:2px solid #030202;
+ border-radius:6px;
+ color:#030202;
+ padding-top:5px;
+ padding-bottom:5px;
+}
+QPushButton:hover{
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}</string>
+             </property>
+             <property name="text">
+              <string>Add to Favourite</string>
              </property>
             </widget>
            </item>
@@ -1222,7 +1286,7 @@ padding-bottom:5px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1117</width>
+     <width>1095</width>
      <height>21</height>
     </rect>
    </property>

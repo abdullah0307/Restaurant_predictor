@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.6 (Marvellous_Group_03234952_Final_Year_Project)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (Predicting-future-medical-diagnoses-with-RNNs-using-Fast-AI-API-from-scratch) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">

@@ -6,6 +6,7 @@ from PyQt5 import QtWidgets, QtCore
 from GUI import Ui_MainWindow
 
 import Register
+import favourite
 import Warning
 import About
 import pandas as pd
@@ -24,6 +25,11 @@ class Main:
         self.register_obj = Register.Ui_Dialog()
         self.register_obj.setupUi(self.register_window)
 
+        # Favourite window
+        self.favourite_window = QtWidgets.QDialog()
+        self.favourite_obj = favourite.Ui_Dialog()
+        self.favourite_obj.setupUi(self.favourite_window)
+
         # Warning window
         self.warning_window = QtWidgets.QDialog()
         self.warning_obj = Warning.Ui_Dialog()
@@ -39,9 +45,16 @@ class Main:
         self.main_obj.pushButton.clicked.connect(self.login)
         self.register_obj.pushButton.clicked.connect(self.register)
         self.main_obj.pushButton_3.clicked.connect(self.move_back)
-        self.main_obj.pushButton_6.clicked.connect(lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2))
+        self.main_obj.pushButton_6.clicked.connect(
+            lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page_2))
         self.main_obj.pushButton_7.clicked.connect(lambda: self.about_window.show())
-        self.main_obj.pushButton_5.clicked.connect(lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
+        self.main_obj.pushButton_5.clicked.connect(
+            lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
+        self.main_obj.pushButton_8.clicked.connect(self.favourite_window_show)
+        self.main_obj.pushButton_10.clicked.connect(self.logout)
+        self.main_obj.pushButton_9.clicked.connect(self.add_to_favourite)
+        self.favourite_obj.pushButton_2.clicked.connect(self.favourite_item_clicked)
+        self.favourite_obj.pushButton.clicked.connect(self.delete_favourite_item)
 
         # link the list of restaurants with the function
         self.main_obj.listWidget.itemClicked.connect(self.list_item_clicked)
@@ -68,8 +81,78 @@ class Main:
 
         # start with First Feature
         self.column = 0
+    def delete_favourite_item(self):
+
+        members = self.favourite_obj.listWidget.currentItem()
+        row = self.favourite_obj.listWidget.row(members)
+        self.favourite_obj.listWidget.takeItem(row)
+
+        lines = list()
+        with open('data/favourite.csv', 'r') as readFile:
+            reader = csv.reader(readFile)
+            for row in reader:
+                lines.append(row)
+                for field in row:
+                    if field == members:
+                        lines.remove(row)
+        with open('data/favourite.csv', 'w') as writeFile:
+            writer = csv.writer(writeFile)
+            writer.writerows(lines)
+
+    def favourite_item_clicked(self):
+        res = pd.read_csv('data/zomato.csv', encoding="ISO-8859-1")
+        p = self.favourite_obj.listWidget.currentItem().text()
+        record = res[res['Restaurant_Name'] == p]
+
+        self.main_obj.label_5.setText("Restaurant name: " + p)
+        self.main_obj.label_6.setText("Restaurant ID: " + str(record['Restaurant_ID'].values[0]))
+        self.main_obj.label_11.setText("Cuisines: " + str(record['Cuisines'].values[0]))
+        self.main_obj.label_12.setText("Currency: " + record['Currency'].values[0])
+        self.main_obj.label_8.setText("City: " + record['City'].values[0])
+        self.main_obj.label_10.setText("Locality: " + record['Locality'].values[0])
+        self.main_obj.label_7.setText("Address: " + record['Address'].values[0])
+        latitude = record['Latitude'].values[0]
+        longitude = record['Longitude'].values[0]
+
+        self.main_obj.webEngineView.setUrl(
+            QtCore.QUrl("https://www.google.com/maps/place/" + str(latitude) + "," + str(longitude)))
+
+        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.page)
+        self.main_obj.pushButton_9.setEnabled(False)
+        self.main_obj.listWidget.clear()
+        self.favourite_window.close()
+
+    def favourite_window_show(self):
+        self.favourite_obj.listWidget.clear()
+        res = pd.read_csv("data/favourite.csv")
+        res_names = res['restaurant'].values
+        self.favourite_obj.listWidget.addItems(res_names)
+        self.favourite_window.show()
+
+    def add_to_favourite(self):
+        restaurant = self.main_obj.listWidget.currentItem().text()
+        print(restaurant)
+        res = pd.read_csv("data/favourite.csv").values
+        if restaurant in res:
+            self.warning_obj.label_2.setText("Restaurant already added")
+            self.warning_window.show()
+            return
+
+        # create a new user entry
+        row = [restaurant]
+        with open("data/favourite.csv", "a") as f:
+            wo = csv.writer(f, lineterminator='\n')
+            wo.writerow(row)
+            f.close()
+
+    def logout(self):
+        self.main_obj.frame_8.setVisible(False)
+        self.main_obj.frame_4.setVisible(True)
+        self.main_obj.lineEdit.setText("")
+        self.main_obj.lineEdit_2.setText("")
 
     def move_back(self):
+        self.main_obj.pushButton_9.setEnabled(True)
         # Load the dataset
         self.df = pd.read_csv("data/zomato.csv", encoding="ISO-8859-1")
 
