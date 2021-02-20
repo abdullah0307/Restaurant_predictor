@@ -1,4 +1,1 @@
-email,password
-abc@gmail.com,CCC
-abdullahjavaid0307@gmail.com,CDE
-abcd@gmail.com,CCC
+user_name,email,country,language,role,gender,passwordabdullah,abc@gmail.com,Pakistan,Urdu,User,Male,CCCabdullah,abdullah@gmail.com,111,2121,Admin,Male,CCC

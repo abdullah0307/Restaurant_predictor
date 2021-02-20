@@ -13,11 +13,12 @@
   <property name="windowTitle">
    <string>Favourites</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/bg/images/logo.png</normaloff>:/bg/images/logo.png</iconset>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/bg/images/Tallest Restaurants in the World 7.jpg);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;</string>
+   <string notr="true">background-color: rgb(0, 170, 255);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -39,7 +40,6 @@ background-size: cover;</string>
 background-color: rgb(255, 255, 255);
 border-color: rgb(255, 0, 0);
 border-radius:30px;
-border:2px solid #030202;
 </string>
      </property>
      <property name="frameShape">
@@ -58,18 +58,10 @@ border:2px solid #030202;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
- border-radius:6px;
- color:#030202;
- padding-top:5px;
- padding-bottom:5px;
-}
-QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 194, 194);
+border-radius:6px;
+ border:2px solid #ffffff;</string>
         </property>
         <property name="text">
          <string>Delete</string>
@@ -85,18 +77,10 @@ QPushButton:hover{
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{background:none;
- border:2px solid #030202;
- border-radius:6px;
- color:#030202;
- padding-top:5px;
- padding-bottom:5px;
-}
-QPushButton:hover{
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
-}
-</string>
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 194, 194);
+border-radius:6px;
+ border:2px solid #ffffff;</string>
         </property>
         <property name="text">
          <string>Open</string>
@@ -118,7 +102,7 @@ QPushButton:hover{
         <property name="font">
          <font>
           <family>Times New Roman</family>
-          <pointsize>14</pointsize>
+          <pointsize>18</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>

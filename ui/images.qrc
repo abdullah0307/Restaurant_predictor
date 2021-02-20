@@ -1,6 +1,20 @@
 <RCC>
   <qresource prefix="bg">
+    <file>../images/avatar.jpeg</file>
+    <file>../images/forward.png</file>
+    <file>../images/customer-support.png</file>
+    <file>../images/queries.png</file>
+    <file>../images/users_list.png</file>
+    <file>../images/about.png</file>
+    <file>../images/find.png</file>
+    <file>../images/favourite.png</file>
+    <file>../images/email.png</file>
+    <file>../images/food-menu.png</file>
+    <file>../images/log out.png</file>
+    <file>../images/password.png</file>
     <file>../images/back.png</file>
+    <file>../images/background.jpeg</file>
+    <file>../images/logo.png</file>
     <file>../images/rest-696x392.jpg</file>
     <file>../images/Tallest Restaurants in the World 7.jpg</file>
   </qresource>

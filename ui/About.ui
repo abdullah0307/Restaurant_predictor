@@ -13,8 +13,12 @@
   <property name="windowTitle">
    <string>About</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/bg/images/logo.png</normaloff>:/bg/images/logo.png</iconset>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/bg/images/Tallest Restaurants in the World 7.jpg);
+   <string notr="true">background-color: rgb(0, 170, 255);
 
 
 </string>
@@ -52,7 +56,6 @@
 background-color: rgb(255, 255, 255);
 border-color: rgb(255, 0, 0);
 border-radius:30px;
-border:2px solid #030202;
 
 </string>
      </property>
