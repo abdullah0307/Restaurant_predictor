@@ -4,7 +4,7 @@ import re
 
 import cv2
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem
 
 from GUI import Ui_MainWindow
 
@@ -79,8 +79,17 @@ class Main:
         self.main_obj.pushButton_15.clicked.connect(self.show_all_restaurants)
         self.main_obj.pushButton_13.clicked.connect(self.open_contact_us)
         self.main_obj.pushButton_14.clicked.connect(self.submit_query)
-        self.main_obj.pushButton_16.clicked.connect(lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
-        self.main_obj.push
+        self.main_obj.pushButton_16.clicked.connect(
+            lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
+        self.main_obj.pushButton_17.clicked.connect(self.open_queries_window)
+        self.main_obj.pushButton_20.clicked.connect(
+            lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
+        self.main_obj.pushButton_19.clicked.connect(self.delete_query)
+        self.main_obj.pushButton_21.clicked.connect(self.open_query_window)
+        self.main_obj.pushButton_18.clicked.connect(self.open_users_list)
+        self.main_obj.pushButton_22.clicked.connect(
+            lambda: self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page))
+        self.main_obj.pushButton_23.clicked.connect(self.delete_user)
 
         # Favourite window buttons
         self.favourite_obj.pushButton_2.clicked.connect(self.favourite_item_clicked)
@@ -89,15 +98,6 @@ class Main:
         self.register_obj.pushButton_2.clicked.connect(self.get_user_image)
         self.main_obj.pushButton_12.clicked.connect(self.show_profile_window)
 
-        # Any changing in the profile change
-        self.profile_obj.lineEdit.textChanged.connect(self.line_edit_change)
-        self.profile_obj.lineEdit_2.textChanged.connect(self.line_edit_change)
-        self.profile_obj.lineEdit_4.textChanged.connect(self.line_edit_change)
-        self.profile_obj.lineEdit_5.textChanged.connect(self.line_edit_change)
-        self.profile_obj.radioButton_3.clicked.connect(self.line_edit_change)
-        self.profile_obj.radioButton_2.clicked.connect(self.line_edit_change)
-        self.profile_obj.radioButton_4.clicked.connect(self.line_edit_change)
-        self.profile_obj.radioButton.clicked.connect(self.line_edit_change)
         self.profile_obj.pushButton_2.clicked.connect(self.profile_image_update)
 
         # link the list of restaurants with the function
@@ -141,6 +141,90 @@ class Main:
         # Users data
         self.restaurants = pd.read_csv("data/zomato.csv", encoding="ISO-8859-1")
 
+    def delete_user(self):
+
+        row = self.main_obj.tableWidget_2.selectedItems()
+        email = row[1].text()
+        lines = list()
+        with open('data/users.csv', 'r', newline="") as readFile:
+            reader = csv.reader(readFile)
+            for row in reader:
+                lines.append(row)
+                for field in row:
+                    if field == email:
+                        lines.remove(row)
+        with open('data/users.csv', 'w', newline="") as writeFile:
+            writer = csv.writer(writeFile)
+            writer.writerows(lines)
+
+        index = self.main_obj.tableWidget_2.currentItem().row()
+        self.main_obj.tableWidget_2.removeRow(index)
+
+    def open_users_list(self):
+        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.UsersList)
+
+        # Load the saved user data
+        with open('data/users.csv', 'r') as readFile:
+            reader = csv.reader(readFile)
+            self.main_obj.tableWidget_2.setRowCount(0)
+
+            for x, row in enumerate(reader):
+                if x == 0:
+                    continue
+                self.main_obj.tableWidget_2.insertRow(x - 1)
+                for y, field in enumerate(row):
+                    item = QTableWidgetItem(str(field))
+                    self.main_obj.tableWidget_2.setItem(x - 1, y, item)
+
+    def open_query_window(self):
+        self.main_obj.frame_12.setVisible(True)
+        row = self.main_obj.tableWidget.selectedItems()
+        first_name = row[0].text()
+        last_name = row[1].text()
+        email = row[2].text()
+        phone = row[3].text()
+        query = row[4].text()
+        content = "Name: " + first_name + " " + last_name + "\nEmail: " + email + "\nPhone number: " + phone + "\nQuery: " + query
+        self.main_obj.textBrowser.setText(content)
+
+    def delete_query(self):
+        if self.main_obj.tableWidget_2.selectedIndexes() is "":
+            return
+
+        row = self.main_obj.tableWidget.selectedItems()
+        email = row[2].text()
+        lines = list()
+        with open('data/queries.csv', 'r', newline="") as readFile:
+            reader = csv.reader(readFile)
+            for row in reader:
+                lines.append(row)
+                for field in row:
+                    if field == email:
+                        lines.remove(row)
+        with open('data/queries.csv', 'w', newline="") as writeFile:
+            writer = csv.writer(writeFile)
+            writer.writerows(lines)
+
+        index = self.main_obj.tableWidget.currentItem().row()
+        self.main_obj.tableWidget.removeRow(index)
+
+    def open_queries_window(self):
+        self.main_obj.frame_12.setVisible(False)
+        self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.Queries)
+
+        # Load the saved user data
+        with open('data/queries.csv', 'r') as readFile:
+            reader = csv.reader(readFile)
+            self.main_obj.tableWidget.setRowCount(0)
+
+            for x, row in enumerate(reader):
+                if x == 0:
+                    continue
+                self.main_obj.tableWidget.insertRow(x - 1)
+                for y, field in enumerate(row):
+                    item = QTableWidgetItem(str(field))
+                    self.main_obj.tableWidget.setItem(x - 1, y, item)
+
     def submit_query(self):
         if self.main_obj.lineEdit_4.text() is "" or self.main_obj.lineEdit_5 is "" or self.main_obj.lineEdit_6 is "" or self.main_obj.lineEdit_7 is "":
             self.warning_obj.label_2.setText("please fill all the fields")
@@ -168,7 +252,6 @@ class Main:
             csv_writer.writerow(record)
 
         self.main_obj.stackedWidget.setCurrentWidget(self.main_obj.login_page)
-
 
     def open_contact_us(self):
         self.main_obj.textEdit.setText("")
@@ -280,31 +363,6 @@ class Main:
 
         self.profile_window.close()
 
-        self.warning_obj.label_2.setText("Changes Saved")
-        self.warning_window.show()
-
-    def line_edit_change(self):
-        self.user_name = self.profile_obj.lineEdit.text()
-        self.user_language = self.profile_obj.lineEdit_5.text()
-        self.user_country = self.profile_obj.lineEdit_4.text()
-
-        if self.profile_obj.radioButton_2.isChecked():
-            self.user_gender = "Male"
-        else:
-            self.user_gender = "Female"
-
-        if self.profile_obj.radioButton_3.isChecked():
-            self.user_role = "Admin"
-        else:
-            self.user_role = "User"
-
-        # Setting up the user data
-        self.profile_obj.label_3.setText("Name: " + self.user_name)
-        self.profile_obj.label_5.setText("Role: " + self.user_role)
-        self.profile_obj.label_16.setText("Gender: " + self.user_gender)
-        self.profile_obj.label_11.setText("Country: " + self.user_country)
-        self.profile_obj.label_12.setText("Language:" + self.user_language)
-
     def get_user_image(self):
         # open the dialogue box to select the file
         options = QtWidgets.QFileDialog.Options()
@@ -321,6 +379,11 @@ class Main:
         self.user_image = path[0]
 
     def show_profile_window(self):
+
+        # Clear all the fields
+        self.profile_obj.lineEdit.clear()
+        self.profile_obj.lineEdit_4.clear()
+        self.profile_obj.lineEdit_5.clear()
 
         # Setting up the user data
         self.profile_obj.label_3.setText("Name: " + self.user_name)
@@ -365,7 +428,7 @@ class Main:
                 for field in row:
                     if field == members:
                         lines.remove(row)
-        with open('data/favourite.csv', 'w') as writeFile:
+        with open('data/favourite.csv', 'w', newline="") as writeFile:
             writer = csv.writer(writeFile)
             writer.writerows(lines)
 
@@ -605,6 +668,13 @@ class Main:
             self.main_obj.label_19.setVisible(True)
             self.main_obj.pushButton_12.setVisible(True)
 
+            if users[users['email'] == input_email]['role'].values[0] == "Admin":
+                self.main_obj.pushButton_17.setVisible(True)
+                self.main_obj.pushButton_18.setVisible(True)
+            else:
+                self.main_obj.pushButton_17.setVisible(False)
+                self.main_obj.pushButton_18.setVisible(False)
+
             # Load the user profile
             self.user_name = users[users['email'] == input_email]['user_name'].values[0]
             self.user_role = users[users['email'] == input_email]['role'].values[0]
@@ -616,8 +686,8 @@ class Main:
             self.user_image = cv2.imread("data/User images/" + self.user_name + ".jpg")
 
             # Set the button name with username
-            self.main_obj.pushButton_12.setText(self.user_name)
-            self.main_obj.pushButton_11.setText(self.user_name)
+            self.main_obj.pushButton_12.setText(self.user_name + " (" + self.user_role + " )")
+            self.main_obj.pushButton_11.setText(self.user_name + " (" + self.user_role + " )")
 
             # if the image found in the directory
             if os.path.exists("data/User images/" + self.user_name + ".jpg"):

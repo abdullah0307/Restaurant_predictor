@@ -521,7 +521,7 @@ border-radius:30px;
          <string notr="true">background-color: rgb(231, 231, 231);</string>
         </property>
         <property name="placeholderText">
-         <string>abc@gmail.com</string>
+         <string>abc@xyz.com</string>
         </property>
        </widget>
       </item>
